@@ -36,3 +36,4 @@ const getObject = (file1, file2) => {
   return `{\n${sortedDifference.join('\n')}\n}`;
 };
 export default  getObject
+//inxex
