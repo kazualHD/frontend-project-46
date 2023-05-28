@@ -1,5 +1,5 @@
 install: # install deps
-	npm ci
+	npm install
 
 link:
 	npm link
@@ -11,4 +11,4 @@ lint:
 	npm run lint
 
 test-coverage:
-	npm run test-coverage
+	npx jest --coverage
