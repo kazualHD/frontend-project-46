@@ -1,33 +1,19 @@
-import _ from 'lodash';
-import fs from 'fs';
 import path from 'path';
+import parse from './parsers.js';
+import getDiff from './buildTree.js';
+import toFormat from './formatters/index.js';
 
-const getObject = (file1, file2) => {
-   // eslint-disable-next-line no-undef
-  const absolutePath1 = path.resolve(process.cwd(), file1);
-   // eslint-disable-next-line no-undef
-  const absolutePath2 = path.resolve(process.cwd(), file2);
+// eslint-disable-next-line no-undef
+const getAbsPath = (filePath) => path.resolve(process.cwd(), filePath);
+const getExtname = (filepath) => path.extname(filepath);
 
-  const data1 = JSON.parse(fs.readFileSync(absolutePath1, 'utf-8'));
-  const data2 = JSON.parse(fs.readFileSync(absolutePath2, 'utf-8'));
-
-  const keys = _.union(Object.keys(data1), Object.keys(data2));
-  const sortedKeys = _.sortBy(keys);
-
-  const differences = sortedKeys.map((key) => {
-    if (!_.has(data1, key)) {
-      return `  + ${key}: ${data2[key]}`;
-    }
-    if (!_.has(data2, key)) {
-      return `  - ${key}: ${data1[key]}`;
-    }
-    if (data1[key] !== data2[key]) {
-      return `  - ${key}: ${data1[key]}\n  + ${key}: ${data2[key]}`;
-    }
-    return `    ${key}: ${data1[key]}`;
-  });
-
-  return `{\n${differences.join('\n')}\n}`;
+export default (filePath1, filePath2, format = 'stylish') => {
+  const path1 = getAbsPath(filePath1);
+  const path2 = getAbsPath(filePath2);
+  const extname1 = getExtname(path1);
+  const extname2 = getExtname(path2);
+  const data1 = parse(path1, extname1);
+  const data2 = parse(path2, extname2);
+  const diffTree = getDiff(data1, data2);
+  return toFormat(diffTree, format);
 };
-
-export default getObject;
