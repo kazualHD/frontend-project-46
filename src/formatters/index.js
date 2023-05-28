@@ -1,5 +1,5 @@
-import stylish from '../formatters/stylish.js';
-import plain from '../formatters/plain.js';
+import stylish from './stylish.js';
+import plain from './plain.js';
 
 export default (diffTree, format) => {
   switch (format) {
