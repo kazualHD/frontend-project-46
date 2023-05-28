@@ -3,7 +3,7 @@
 # Gendiff.js
 
 [![Build Status](https://travis-ci.com/kazualHD/frontend-project-46.svg?branch=master)](https://travis-ci.com/kazualHD/frontend-project-46)
-[![Maintainability](https://api.codeclimate.com/v1/badges/xxxxxxxxxxxxxxxxxxxxxxxx/maintainability)](https://codeclimate.com/github/kazualHD/frontend-project-46/maintainability)
+[![Code Climate](https://img.shields.io/codeclimate/maintainability/kazualHD/frontend-project-46?style=flat-square)](https://codeclimate.com/github/kazualHD/frontend-project-46)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/xxxxxxxxxxxxxxxxxxxxxxxx/test_coverage)](https://codeclimate.com/github/kazualHD/frontend-project-46/test_coverage)
 
 Gendiff.js is a utility that compares two configuration files and shows the difference. It can be used to generate human-readable diffs in various formats.
