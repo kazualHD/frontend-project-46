@@ -4,7 +4,7 @@ const plain = (diffTree) => {
   const toString = (node) => {
     if (typeof node === 'string') {
       return `'${node}'`;
-    } else if (_.isPlainObject(node)) {
+    } if (_.isPlainObject(node)) {
       return '[complex value]';
     }
     return String(node);

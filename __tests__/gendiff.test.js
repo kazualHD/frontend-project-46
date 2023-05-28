@@ -1,8 +1,8 @@
-import { test, expect } from '@jest/globals';
-import getObject from '../src/index.js'; 
-import { fileURLToPath } from 'url';
-import path from 'path';
-import fs from 'fs';
+import { test, expect } from '@jest/globals'
+import getObject from '../src/index.js' 
+import { fileURLToPath } from 'url'
+import path from 'path'
+import fs from 'fs'
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -19,36 +19,33 @@ const cases = [
     file1: 'file1.json',
     file2: 'file2.json',
     exp: 'expectedJson.txt',
-    format: 'stylish'
+    format: 'stylish',
   },
   {
     file1: 'file3.json',
     file2: 'file4.json',
     exp: 'expectedChildren.txt',
-    format: 'stylish'
+    format: 'stylish',
   },
   {
     file1: 'file3.json',
     file2: 'file4.json',
     exp: 'expectedYml.txt',
-    format: 'plain'
+    format: 'plain',
   },
   {
     file1: 'file5.yml',
     file2: 'file6.yml',
     exp: 'expectedJson.txt',
-    format:'stylish'
+    format:'stylish',
   },
   {
-  file1: 'file7.yml',
-  file2: 'file8.yml',
-  exp: 'builtTree.txt',
-  format: 'json'
+   file1: 'file7.yml',
+   file2: 'file8.yml',
+   exp: 'builtTree.txt',
+   format: 'json',
  } 
-
- 
 ];
-  
   test.each(cases)('TEST', ({
     file1, file2, exp, format,
   }) => {
