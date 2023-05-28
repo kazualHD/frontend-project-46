@@ -1,28 +1,40 @@
-name: Run Tests
+name: Run tests
 
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+on: push
+
+env:
+  CI: true
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
 
+    strategy:
+      matrix:
+        node-version: [18.x]
+
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
+      - name: clone rep
+        uses: actions/checkout@v3
+      - name: install node ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
         with:
-          node-version: 14
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - name: install dependencies
+        run: make install
+      - name: run eslint
+        run: make lint
+      - name: run test
+        run: make test
+      - name: run codeclimat coverage
+        uses: paambaati/codeclimate-action@v3.2.0
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        with:
+          coverageCommand: |
+            npm run test-coverage
+            ./cc-test-reporter format-coverage -t lcov -o coverage/codeclimate.json
+          debug: true
 
-      - name: Install dependencies
-        run: npm install
-
-      - name: Run tests
         run: npm test
