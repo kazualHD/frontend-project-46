@@ -11,4 +11,6 @@ lint:
 	npm run lint
 
 test-coverage:
-	npx jest --coverage
+	npm test -- --coverage --coverageProvider=v8
+test:
+	NODE_OPTIONS=--experimental-vm-modules npx jest
