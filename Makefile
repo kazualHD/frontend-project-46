@@ -8,7 +8,7 @@ publish: # publish the project locally
 	npm publish --dry-run
 
 lint:
-	npm run lint
+	npx eslint .
 
 test-coverage:
 	npm test -- --coverage --coverageProvider=v8
