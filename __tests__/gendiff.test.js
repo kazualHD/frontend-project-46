@@ -49,7 +49,7 @@ const cases = [
 ];
 
 test.each(cases)(
-  'TEST',
+  'getObject should return the expected output for %p',
   ({
     file1, file2, exp, format,
   }) => {
