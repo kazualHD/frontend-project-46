@@ -1,8 +1,7 @@
 ### Hexlet tests and linter status: 
 [![Actions Status](https://github.com/kazualHD/frontend-project-46/workflows/hexlet-check/badge.svg)](https://github.com/kazualHD/frontend-project-46/actions) 
 # Gendiff.js 
- 
-[![Build Status](https://travis-ci.com/kazualHD/frontend-project-46.svg?branch=master)](https://travis-ci.com/kazualHD/frontend-project-46) 
+
 [![Code Climate](https://img.shields.io/codeclimate/maintainability/kazualHD/frontend-project-46?style=flat-square)](https://codeclimate.com/github/kazualHD/frontend-project-46) 
 [![Test Coverage](https://api.codeclimate.com/v1/badges/xxxxxxxxxxxxxxxxxxxxxxxx/test_coverage)](https://codeclimate.com/github/kazualHD/frontend-project-46/test_coverage) 
  
@@ -27,11 +26,46 @@ $ gendiff —format <format> <pathToFile1> <pathToFile2>
 pathToFile1 is the path to the first configuration file. 
 pathToFile2 is the path to the second configuration file. 
  
-Examples 
-Compare two JSON files: 
- 
-$ gendiff --format stylish file1.json file2.json 
- 
-Compare a YAML file and an INI file: 
- 
-$ gendiff --format plain file1.yaml file2.ini 
+### Plain Output
+
+To compare two files and output the result in stylish format, use the following command:
+
+```
+gendiff <FILEPATH1> <FILEPATH2>
+```
+
+> #### Example of work:
+>
+> <asciinema-player src="https://asciinema.org/a/I3VStryiA1PhchduoD8EeMsj5" cols="80" rows="24"></asciinema-player>
+
+
+### Stylish Output
+
+To compare two files and output the result in plain format, use the following command:
+
+```
+gendiff plain <FILEPATH1> <FILEPATH2>  -f plain
+```
+
+> #### Example of work:
+>
+> <asciinema-player src="https://asciinema.org/a/Z29P9QlWwFzs6l72k5pNBmGKG" cols="80" rows="24"></asciinema-player>
+
+
+### JSON Output
+
+To compare two files and output the result in JSON format, use the following command:
+
+```
+gendiff <FILEPATH1> <FILEPATH2>  -f json
+```
+
+or
+
+```
+gendiff <FILEPATH1> <FILEPATH2>  -f JSON
+```
+
+> #### Example of work:
+>
+> <asciinema-player src="https://asciinema.org/a/OyRXqpfGLZGQxWPo2rVipexNE" cols="80" rows="24"></asciinema-player>
