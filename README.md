@@ -36,7 +36,7 @@ gendiff <FILEPATH1> <FILEPATH2>
 
 > #### Example of work:
 >
-> <asciinema-player src="https://asciinema.org/a/I3VStryiA1PhchduoD8EeMsj5" cols="80" rows="24"></asciinema-player>
+ <asciinema-player src="https://asciinema.org/a/I3VStryiA1PhchduoD8EeMsj5" cols="80" rows="24"></asciinema-player>
 
 
 ### Stylish Output
@@ -49,7 +49,7 @@ gendiff plain <FILEPATH1> <FILEPATH2>  -f plain
 
 > #### Example of work:
 >
-> <asciinema-player src="https://asciinema.org/a/Z29P9QlWwFzs6l72k5pNBmGKG" cols="80" rows="24"></asciinema-player>
+ <asciinema-player src="https://asciinema.org/a/Z29P9QlWwFzs6l72k5pNBmGKG" cols="80" rows="24"></asciinema-player>
 
 
 ### JSON Output
@@ -68,4 +68,4 @@ gendiff <FILEPATH1> <FILEPATH2>  -f JSON
 
 > #### Example of work:
 >
-> <asciinema-player src="https://asciinema.org/a/OyRXqpfGLZGQxWPo2rVipexNE" cols="80" rows="24"></asciinema-player>
+ <asciinema-player src="https://asciinema.org/a/OyRXqpfGLZGQxWPo2rVipexNE" cols="80" rows="24"></asciinema-player>
