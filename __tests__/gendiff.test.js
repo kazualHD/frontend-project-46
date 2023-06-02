@@ -1,8 +1,8 @@
-import { test, expect } from '@jest/globals'
-import getObject from '../src/index.js' 
-import { fileURLToPath } from 'url'
-import path from 'path'
-import fs from 'fs'
+import { test, expect } from '@jest/globals';
+import { fileURLToPath } from 'url';
+import path from 'path';
+import fs from 'fs';
+import getObject from '../src/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -14,6 +14,7 @@ const getActual = (filename1, filename2, format) => {
   const path2 = getFixturePath(filename2);
   return getObject(path1, path2, format);
 };
+
 const cases = [
   {
     file1: 'file1.json',
@@ -37,19 +38,23 @@ const cases = [
     file1: 'file5.yml',
     file2: 'file6.yml',
     exp: 'expectedJson.txt',
-    format:'stylish',
+    format: 'stylish',
   },
   {
-   file1: 'file7.yml',
-   file2: 'file8.yml',
-   exp: 'builtTree.txt',
-   format: 'json',
- } 
+    file1: 'file7.yml',
+    file2: 'file8.yml',
+    exp: 'builtTree.txt',
+    format: 'json',
+  },
 ];
-  test.each(cases)('TEST', ({
+
+test.each(cases)(
+  'TEST',
+  ({
     file1, file2, exp, format,
   }) => {
     const actual = getActual(file1, file2, format);
     const expected = readFile(exp);
     expect(actual).toBe(expected);
-  });
+  },
+);

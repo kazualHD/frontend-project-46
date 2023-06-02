@@ -4,14 +4,14 @@ const plain = (diffTree) => {
   const toString = (node) => {
     if (typeof node === 'string') {
       return `'${node}'`;
-    } if (_.isPlainObject(node)) {
+    } else if (_.isPlainObject(node)) {
       return '[complex value]';
     }
     return String(node);
   };
 
-  const iter = (node, path = '') => {
-    return node.flatMap((prop) => {
+  const iter = (node, path = '') =>
+    node.flatMap((prop) => {
       const { key, type, value, previous, current, children } = prop;
       const currentPath = [path, key].filter(Boolean).join('.');
       switch (type) {
@@ -27,7 +27,6 @@ const plain = (diffTree) => {
           return [];
       }
     });
-  };
 
   return iter(diffTree).join('\n');
 };

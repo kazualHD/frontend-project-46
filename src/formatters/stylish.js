@@ -34,7 +34,7 @@ const stylish = (diffTree) => {
     return `{\n${lines.join('\n')}\n${generateIndent(depth)}}`;
   };
 
-return iter(diffTree, 0);
+  return iter(diffTree, 0);
 };
 
 export default stylish;

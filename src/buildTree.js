@@ -1,9 +1,9 @@
 import _ from 'lodash';
 
-const getDiff = (obj1, obj2 ) => {
+const getDiff = (obj1, obj2) => {
   const union = _.union(Object.keys(obj1), Object.keys(obj2));
   const sorted = _.sortBy(union);
-   return sorted.map((key)=> {
+  return sorted.map((key) => {
     if (_.isPlainObject(obj1[key]) && _.isPlainObject(obj2[key])) {
       return { key, type: 'nested', children: getDiff(obj1[key], obj2[key]) };
     }
@@ -23,6 +23,6 @@ const getDiff = (obj1, obj2 ) => {
     }
     return { key, type: 'unmodified', value: obj1[key] };
   });
+};
 
-}
-export default getDiff
+export default getDiff;

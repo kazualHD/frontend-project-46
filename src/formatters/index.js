@@ -10,5 +10,7 @@ export default (diffTree, format) => {
     case 'json':
     case 'JSON':
       return JSON.stringify(diffTree);
+    default:
+      throw new Error(`Unsupported format: ${format}`);
   }
 };
