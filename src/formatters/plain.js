@@ -11,8 +11,7 @@ const plain = (diffTree) => {
     return String(node);
   };
 
-  const iter = (node, path = '') =>
-    node.flatMap((prop) => {
+  const iter = (node, path = '') => node.flatMap((prop) => {
       const {
         key, type, value, previous, current, children,
       } = prop;
