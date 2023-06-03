@@ -13,8 +13,8 @@ const stylish = (diffTree) => {
   const iter = (tree, depth) => {
     const indent = generateIndent(depth);
     const lines = tree.map((node) => {
-      const { 
-        key, type, value, previous, current, children 
+      const {
+        key, type, value, previous, current, children,
       } = node;
       const stringValue = stringifyValue(value, depth + 1);
       const previousValue = stringifyValue(previous, depth + 1);
