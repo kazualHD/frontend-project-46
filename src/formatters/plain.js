@@ -29,6 +29,7 @@ const plain = (diffTree) => {
         default:
           return [];
       }
+
     });
 
   return iter(diffTree).join('\n');
