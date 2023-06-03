@@ -1,14 +1,14 @@
 import _ from 'lodash';
 
 const plain = (diffTree) => {
-    const toString = (node) => {
-        if (typeof node === 'string') {
-            return `'${node}'`;
-        }
-        if (_.isPlainObject(node)) {
-            return '[complex value]';
-        }
-        return String(node);
+  const toString = (node) => {
+    if (typeof node === 'string') {
+      return `'${node}'`;
+    }
+    if (_.isPlainObject(node)) {
+      return '[complex value]';
+    }
+      return String(node);
     };
 
   const iter = (node, path = '') => node.flatMap((prop) => {
