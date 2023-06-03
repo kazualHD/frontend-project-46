@@ -14,7 +14,7 @@ const plain = (diffTree) => {
   const iter = (node, path = '') =>
     node.flatMap((prop) => {
       const {
-        key, type, value, previous, current, children
+        key, type, value, previous, current, children,
       } = prop;
       const currentPath = [path, key].filter(Boolean).join('.');
       switch (type) {
