@@ -12,7 +12,7 @@ const plain = (diffTree) => {
     };
 
   const iter = (node, path = '') => node.flatMap((prop) => {
-    const {
+  const {
       key, type, value, previous, current, children,
     } = prop;
     const currentPath = [path, key].filter(Boolean).join('.');
