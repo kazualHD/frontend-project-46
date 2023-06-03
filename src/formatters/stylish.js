@@ -5,7 +5,7 @@ const stylish = (diffTree) => {
     if (typeof value === 'object' && value !== null) {
       const indent = generateIndent(depth + 1);
       const innerLines = Object.entries(value).map(([key, val]) => `${indent}${key}: ${stringifyValue(val, depth + 1)}`);
-      return `{\n${innerLines.join('\n')}\n${generateIndent(depth)}}`;
+      return `{\n${innerLines.join('\n')}\n${generateIndent(depth)}\n}`;
     }
     return value;
   };
@@ -31,7 +31,7 @@ const stylish = (diffTree) => {
           return `${indent}    ${key}: ${stringValue}`;
       }
     });
-    return `{\n${lines.join('\n')}\n${generateIndent(depth)}}`;
+    return `{\n${lines.join('\n')}\n${generateIndent(depth)}\n}`;
   };
 
   return iter(diffTree, 0);
