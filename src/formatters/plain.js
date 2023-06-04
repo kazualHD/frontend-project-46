@@ -9,11 +9,11 @@ const plain = (diffTree) => {
       return '[complex value]';
     }
       return String(node);
-    };
+  };
 
   const iter = (node, path = '') => node.flatMap((prop) => {
     const {
-    key, type, value, previous, current, children,
+      key, type, value, previous, current, children,
     } = prop;
     const currentPath = [path, key].filter(Boolean).join('.');
     switch (type) {
