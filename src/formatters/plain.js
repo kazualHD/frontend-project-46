@@ -8,7 +8,7 @@ const plain = (diffTree) => {
     if (_.isPlainObject(node)) {
       return '[complex value]';
     }
-      return String(node);
+    return String(node);
   };
 
   const iter = (node, path = '') => node.flatMap((prop) => {
