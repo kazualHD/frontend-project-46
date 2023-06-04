@@ -31,7 +31,7 @@ pathToFile2 is the path to the second configuration file.
 To compare two files and output the result in stylish format, use the following command:
 
 ```
-gendiff <FILEPATH1> <FILEPATH2>
+gendiff <FILEPATH1> <FILEPATH2> -f plain
 ```
 
 > #### Example of work:
@@ -44,7 +44,7 @@ gendiff <FILEPATH1> <FILEPATH2>
 To compare two files and output the result in plain format, use the following command:
 
 ```
-gendiff plain <FILEPATH1> <FILEPATH2>  -f plain
+gendiff plain <FILEPATH1> <FILEPATH2>  -f stylish
 ```
 
 > #### Example of work:
