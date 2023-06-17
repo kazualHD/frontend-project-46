@@ -1,10 +1,10 @@
-install: # install deps
+install:
 	npm install
 
 link:
 	npm link
 
-publish: # publish the project locally
+publish: 
 	npm publish --dry-run
 
 lint:
