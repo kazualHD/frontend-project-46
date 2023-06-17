@@ -3,7 +3,6 @@ import parse from './parsers.js';
 import getDiff from './buildTree.js';
 import toFormat from './formatters/index.js';
 
-
 const getAbsPath = (filePath) => path.resolve(process.cwd(), filePath);
 const getExtname = (filepath) => path.extname(filepath);
 

@@ -54,4 +54,4 @@ const stylish = (diffTree) => {
   };
   return iter(diffTree, 1);
 };
-export default stylish
+export default stylish;
